@@ -1,69 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AITS Marks Tracker</title>
-  
-  <!-- Chart.js -->
+  <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <header>
       <div>
         <h1>AITS Marks Tracker</h1>
-        <p>Track your performance across PW, Allen &amp; Aakash</p>
+        <p>Track your performance across PW, Allen & Aakash</p>
       </div>
     </header>
 
-    <!-- top cards -->
     <div class="row">
       <!-- PW -->
       <div class="card pw">
         <div class="title">PW</div>
-        <small>Enter Marks (out of 720)</small>
-        <div class="input-row">
-          <input id="pwInput" type="number" min="0" max="720" placeholder="0-720" />
+        <small>Enter Marks or mark Absent</small>
+        <div class="input-group">
+          <select id="pwType">
+            <option value="Milestone" selected>Milestone</option>
+            <option value="AITS">AITS</option>
+          </select>
+          <input id="pwInput" type="number" placeholder="0–720" min="0" max="720" />
+        </div>
+        <div class="option-row">
+          <label><input type="checkbox" id="pwAbsent" /> Absent</label>
           <button class="btn pw" id="pwAdd">Add</button>
         </div>
-
-        <div style="color:var(--muted);margin-top:6px;font-size:13px">Marks History</div>
-        <ul class="marks-list" id="pwList"></ul>
-
-        <div class="avg" id="pwAvg">Average: —</div>
+        <ul id="pwList" class="marks-list"></ul>
+        <div id="pwAvg" class="avg">Average: —</div>
       </div>
 
       <!-- Allen -->
       <div class="card allen">
         <div class="title">Allen</div>
-        <small>Enter Marks (out of 720)</small>
-        <div class="input-row">
-          <input id="allenInput" type="number" min="0" max="720" placeholder="0-720" />
+        <small>Enter Marks or mark Absent</small>
+        <div class="input-group">
+          <select id="allenType">
+            <option value="Minor" selected>Minor</option>
+            <option value="Major">Major</option>
+            <option value="Semi Major">Semi Major</option>
+          </select>
+          <input id="allenInput" type="number" placeholder="0–720" min="0" max="720" />
+        </div>
+        <div class="option-row">
+          <label><input type="checkbox" id="allenAbsent" /> Absent</label>
           <button class="btn allen" id="allenAdd">Add</button>
         </div>
-
-        <div style="color:var(--muted);margin-top:6px;font-size:13px">Marks History</div>
-        <ul class="marks-list" id="allenList"></ul>
-
-        <div class="avg" id="allenAvg">Average: —</div>
+        <ul id="allenList" class="marks-list"></ul>
+        <div id="allenAvg" class="avg">Average: —</div>
       </div>
 
       <!-- Aakash -->
       <div class="card aakash">
         <div class="title">Aakash</div>
-        <small>Enter Marks (out of 720)</small>
-        <div class="input-row">
-          <input id="aakashInput" type="number" min="0" max="720" placeholder="0-720" />
+        <small>Enter Marks or mark Absent</small>
+        <div class="input-group">
+          <select id="aakashType">
+            <option value="PT" selected>PT</option>
+            <option value="TE">TE</option>
+            <option value="NTR">NTR</option>
+            <option value="AIATS">AIATS</option>
+          </select>
+          <input id="aakashInput" type="number" placeholder="0–720" min="0" max="720" />
+        </div>
+        <div class="option-row">
+          <label><input type="checkbox" id="aakashAbsent" /> Absent</label>
           <button class="btn aakash" id="aakashAdd">Add</button>
         </div>
-
-        <div style="color:var(--muted);margin-top:6px;font-size:13px">Marks History</div>
-        <ul class="marks-list" id="aakashList"></ul>
-
-        <div class="avg" id="aakashAvg">Average: —</div>
+        <ul id="aakashList" class="marks-list"></ul>
+        <div id="aakashAvg" class="avg">Average: —</div>
       </div>
     </div>
 
@@ -79,6 +90,5 @@
     </div>
   </div>
   <script src="script.js"></script>
-
 </body>
 </html>
