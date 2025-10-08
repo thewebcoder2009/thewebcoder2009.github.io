@@ -1,3 +1,26 @@
+/* ===== Hide Scrollbar while keeping scroll functionality ===== */
+
+/* For Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: none; /* Hide scrollbar */
+  -ms-overflow-style: none; /* IE and Edge Legacy */
+}
+
+/* For all elements if needed */
+body {
+  overflow-y: scroll; /* ensures scrolling still works */
+}
+body::-webkit-scrollbar {
+  display: none; /* Safari/Chrome specific */
+}
+
+
 :root {
 	--bg: #0b0f14;
 	--card: #141a23;
@@ -62,18 +85,9 @@ header p {
 	border: 1px solid rgba(255, 255, 255, 0.05);
 	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
 }
-
-.card.pw {
-	border-left: 4px solid var(--purple);
-}
-
-.card.allen {
-	border-left: 4px solid var(--orange);
-}
-
-.card.aakash {
-	border-left: 4px solid var(--cyan);
-}
+.card.pw { border-left: 4px solid var(--purple); max-height: 40vh; overflow-y: auto; }
+.card.allen { border-left: 4px solid var(--orange); max-height: 40vh; overflow-y: auto; }
+.card.aakash { border-left: 4px solid var(--cyan); max-height: 40vh; overflow-y: auto; }
 
 .title {
 	font-size: 18px;
