@@ -6,13 +6,14 @@
   <title>AITS Marks Tracker</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div class="container">
     <header>
       <div>
         <h1>AITS Marks Tracker</h1>
-        <p>Track your performance across PW, Allen & Aakash</p>
+        <p>Track and compare your PW, Allen, and Aakash test performance</p>
       </div>
     </header>
 
@@ -20,7 +21,7 @@
       <!-- PW -->
       <div class="card pw">
         <div class="title">PW</div>
-        <small>Enter Marks or mark Absent</small>
+        <small>Enter Marks (out of 720)</small>
         <div class="input-group">
           <select id="pwType">
             <option value="Milestone" selected>Milestone</option>
@@ -39,7 +40,7 @@
       <!-- Allen -->
       <div class="card allen">
         <div class="title">Allen</div>
-        <small>Enter Marks or mark Absent</small>
+        <small>Enter Marks (out of 720)</small>
         <div class="input-group">
           <select id="allenType">
             <option value="Minor" selected>Minor</option>
@@ -59,7 +60,7 @@
       <!-- Aakash -->
       <div class="card aakash">
         <div class="title">Aakash</div>
-        <small>Enter Marks or mark Absent</small>
+        <small>Enter Marks (out of 720 or 240 for PT)</small>
         <div class="input-group">
           <select id="aakashType">
             <option value="PT" selected>PT</option>
@@ -67,7 +68,7 @@
             <option value="NTR">NTR</option>
             <option value="AIATS">AIATS</option>
           </select>
-          <input id="aakashInput" type="number" placeholder="0–720" min="0" max="720" />
+          <input id="aakashInput" type="number" placeholder="0–720 or 240" min="0" />
         </div>
         <div class="option-row">
           <label><input type="checkbox" id="aakashAbsent" /> Absent</label>
@@ -89,6 +90,5 @@
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
 </body>
 </html>
