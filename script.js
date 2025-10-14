@@ -3,8 +3,17 @@ const marks = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { pw: [], allen: 
 function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(marks)); }
 function avg(arr) {
 	const valid = arr.filter(e => typeof e.marks === "number");
-	return valid.length ? (valid.reduce((a, b) => a + b.marks, 0) / valid.length).toFixed(1) : "—";
+	if (!valid.length) return "—";
+	
+	const total = valid.reduce((a, b) => {
+	// Use adjusted marks if available (for PT scaling)
+	const val = typeof b.adjusted === "number" ? b.adjusted : b.marks;
+	return a + val;
+	}, 0);
+	
+	return (total / valid.length).toFixed(1);
 }
+
 
 // ==== Chart Setup ====
 const ctx = document.getElementById("marksChart").getContext("2d");
@@ -47,7 +56,7 @@ function render() {
         </div>
       </li>
     `).join("") || `<li style="color:#94a3b8;">No entries</li>`;
-		document.getElementById(coach + "Avg").textContent = "Average: " + avg(marks[coach]);
+		document.getElementById(coach + "Avg").textContent = "Average (/720): " + avg(marks[coach]);
 	});
 	attachEvents(); updateChart();
 }
