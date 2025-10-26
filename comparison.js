@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ==== Average calculator ====
   const avg = arr => {
-    const valid = arr.filter(e => typeof e.marks === "number");
-    return valid.length ? valid.reduce((a, b) => a + b.marks, 0) / valid.length : 0;
+    const valid = arr.filter(e => typeof e.adjusted === "number");
+    return valid.length ? valid.reduce((a, b) => a + b.adjusted, 0) / valid.length : 0;
   };
 
   // ==== Calculate Averages for PW, Allen, Aakash ====
