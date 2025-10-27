@@ -253,7 +253,7 @@ function showDetails(coach, i) {
     <li><span>Type</span><b>${t.type}</b></li>
     <li><span>Test #</span><b>#${i + 1}</b></li>
     <li><span>Score</span><b><strong>${currentScoreTxt}</strong></b></li>
-    <li><span>Previous Score</span><b>${prevScoreTxt}</b></li>
+    <li><span>Previous ${t.type} Score</span><b>${prevScoreTxt}</b></li>
     <li><span>Change</span><b class="${cmp.cls}">${cmp.txt}</b></li>
   </ul>
 `;
