@@ -114,19 +114,19 @@ header p {
 
 .card.pw {
 	border-left: 4px solid var(--purple);
-	max-height: 40vh;
+	max-height: 56vh;
 	overflow-y: auto;
 }
 
 .card.allen {
 	border-left: 4px solid var(--orange);
-	max-height: 40vh;
+	max-height: 56vh;
 	overflow-y: auto;
 }
 
 .card.aakash {
 	border-left: 4px solid var(--cyan);
-	max-height: 40vh;
+	max-height: 56vh;
 	overflow-y: auto;
 }
 
@@ -201,6 +201,8 @@ input[type=number] {
 	padding: 0;
 	margin: 0;
 	margin-top: 6px;
+	overflow-y: auto;
+    max-height: 32vh;
 }
 
 .marks-list li {
